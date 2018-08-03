@@ -1,6 +1,7 @@
 # 四体 - shitai
 
 Basic gameplay features are all completed with the exceptions of:
+- Timer (How did I forget this?)
 - SRS spin
 - SRS rotation collision
 - Scoring system
