@@ -1,0 +1,1 @@
+This is a working copy without scoring but basic gameplay is 100% working.
