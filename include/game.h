@@ -9,7 +9,6 @@ SDL_Surface* loadSurface();
 void refreshWindow();
 void quit();
 
-void storePrevious();
 void moveDown();
 void moveLeft();
 void moveRight();
