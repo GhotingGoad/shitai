@@ -8,7 +8,7 @@ Basic gameplay features are all completed with the exceptions of:
 - Sound & Music
 - Revamped proper Graphics
 - Video/GIF (clipped texture) for scoring pop-ups
-- Menu
+- Menu and Customization using FStream
 - Multiplayer(?)
 
 # Report
