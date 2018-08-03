@@ -41,5 +41,7 @@ This part took me so long because I keep messing up the equation with "x' = -(y 
 
 # References
 https://tetris.wiki/
+
 http://lazyfoo.net/tutorials/SDL/
+
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
