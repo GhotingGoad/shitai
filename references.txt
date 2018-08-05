@@ -1,0 +1,3 @@
+### Undefined Reference to vtable
+#### Make sure to define destructor
+https://stackoverflow.com/questions/3065154/undefined-reference-to-vtable
