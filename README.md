@@ -1,11 +1,11 @@
 # 四体 - shitai
 
 Basic gameplay features are all completed with the exceptions of:
-- Timer (How did I forget this?)
+~~- Timer (How did I forget this?)~~
 - SRS spin
-- SRS rotation collision
+~~- SRS rotation collision~~ (new bug came out, please read Release 2 patch notes)
 - Scoring system
-- Show Next Block
+~~- Show Next Block~~
 - Sound & Music
 - Revamped proper Graphics
 - Video/GIF (clipped texture) for scoring pop-ups
