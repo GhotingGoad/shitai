@@ -1,6 +1,4 @@
-#include <SDL.h>
-#include <stdio.h>
-#include "game.h"
+#include "libraries.h"
 
 
 const int SCREEN_WIDTH = 640;
@@ -9,18 +7,18 @@ const int SCREEN_HEIGHT = 480;
 int playerPositionX = 240;
 int playerPositionY = 190;
 
-bool flagQuit = false;
 bool flagError = false;
-
-
+bool flagQuit = false;
 
 
 int main(int argc, char *argv[])
 {
     //initialize SDL interface and create basic window.
-    flagError = initializeGame(SCREEN_WIDTH, SCREEN_HEIGHT, flagError);
+    initializeGame(SCREEN_WIDTH, SCREEN_HEIGHT);
     //create an event handler
     SDL_Event event;
+
+    startTimer();
 
     while(!flagQuit && !flagError)
     {
@@ -38,27 +36,21 @@ int main(int argc, char *argv[])
                 switch(event.key.keysym.sym)
                 {
                 case SDLK_UP:
-                    //printf("Up");
-                    //tetrominoMoveUp();
+                    moveUp();
                     break;
                 case SDLK_DOWN:
-                    //printf("Down");
                     moveDown();
                     break;
                 case SDLK_LEFT:
-                    //printf("Left");
                     moveLeft();
                     break;
                 case SDLK_RIGHT:
-                    //printf("Right");
                     moveRight();
                     break;
                 case SDLK_z:
-                    //printf("Button Z");
                     rotateClockwise();
                     break;
                 case SDLK_x:
-                    //printf("Button X");
                     rotateCounterClockwise();
                     break;
                 case SDLK_ESCAPE:
@@ -71,12 +63,12 @@ int main(int argc, char *argv[])
             }
         }
         //display a texture onto the screen
-        loadMedia(flagError);
+        loadMedia();
         refreshWindow();
-        //60 FPS timer
-        SDL_Delay(16.667);
     }
+    stopTimer();
     quit();
     return 0;
 }
+
 
