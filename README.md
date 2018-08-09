@@ -3,7 +3,7 @@
 Basic gameplay features are all completed with the exceptions of:
 - ~~Timer (How did I forget this?)~~
 - SRS spin
-- ~~SRS rotation collision~~ (new bug came out, please read Release 2 patch notes)
+- ~~SRS rotation collision~~ (new bug came out, please read Release ~~2~~ 3 patch notes)
 - Scoring system
 - ~~Show Next Block~~
 - Sound & Music
