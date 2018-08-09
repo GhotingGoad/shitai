@@ -1,4 +1,4 @@
-#include "libraries.h"
+#include "global.h"
 
 
 SDL_Window* gameWindow = NULL;
@@ -9,10 +9,11 @@ SDL_Rect textureBackgroundClip;
 cTexture textureTetromino;
 SDL_Rect textureTetrominoClip[7];
 
-int mapTetris[10][22];
+int mapTetris[14][24];
 int mapNext[4][2];
 int tetrominoType[6];
 
+int clip;
 
 void initializeGame(int SCREEN_WIDTH, int SCREEN_HEIGHT){
     if(SDL_Init(SDL_INIT_VIDEO) < 0){
@@ -20,7 +21,7 @@ void initializeGame(int SCREEN_WIDTH, int SCREEN_HEIGHT){
         flagError = true;
     }else{
         printf("SDL successfully initialized.");
-        gameWindow = SDL_CreateWindow("SDL Tetris", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        gameWindow = SDL_CreateWindow("shitai", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
         if(gameWindow == NULL){
             printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
             flagError = true;
@@ -45,8 +46,20 @@ void initializeGame(int SCREEN_WIDTH, int SCREEN_HEIGHT){
                 mapTetris[i][j] = -1;
             }
         }
+        //set emergency bug barrier for right border
+        for(int i = 10; i < 12; i++){
+            for(int j = 0; j < 22; j++){
+                mapTetris[i][j] = -2;
+            }
+        }
+        //set emergency bug barrier for bottom border
+        for(int i = 0; i < 12; i++){
+            for(int j = 22; j < 24; j++){
+                mapTetris[i][j] = -2;
+            }
+        }
         srand(time(NULL));
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 6; i++){
             generateTetromino();
         }
     }
@@ -99,8 +112,8 @@ void refreshWindow(){
     //textureBackground.renderBackground(gameRenderer);
     textureBackground.renderBackground(gameRenderer);
     for(int i = 0; i < 10; i++){
-        for(int j = 2; j < 22; j++){
-            int clip = mapTetris[i][j];
+        for(int j = 0; j < 22; j++){
+            clip = mapTetris[i][j];
             if(clip<10) textureTetromino.renderSprite(i * 20 + 40, j * 20, &textureTetrominoClip[clip], gameRenderer);
             else textureTetromino.renderSprite(i * 20 + 40, j * 20, &textureTetrominoClip[clip-10], gameRenderer);
         }
@@ -110,7 +123,7 @@ void refreshWindow(){
         drawNextTetromino(i + 1);
         for(int j = 0; j < 4; j++){
             for(int k = 0; k < 2; k++){
-                int clip = mapNext[j][k];
+                clip = mapNext[j][k];
                 if(clip == 0) textureTetromino.renderSprite(j * 20 + 262,  k * 20 + i * 72 + 84, &textureTetrominoClip[clip], gameRenderer);
                 else if(clip == 1) textureTetromino.renderSprite(j * 20 + 262,  k * 20 + i * 72 + 94, &textureTetrominoClip[clip], gameRenderer);
                 else textureTetromino.renderSprite(j * 20 + 272,  k * 20 + i * 72 + 84, &textureTetrominoClip[clip], gameRenderer);
@@ -132,6 +145,7 @@ void quit(){
     gameRenderer = NULL;
 
     //Quit SDL subsystems
+    stopTimer();
     IMG_Quit();
     SDL_Quit();
 }

@@ -1,4 +1,4 @@
-#include "libraries.h"
+#include "global.h"
 
 
 const int SCREEN_WIDTH = 640;
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     //create an event handler
     SDL_Event event;
 
-    startTimer();
+    //startTimer();
 
     while(!flagQuit && !flagError)
     {
@@ -48,10 +48,10 @@ int main(int argc, char *argv[])
                     moveRight();
                     break;
                 case SDLK_z:
-                    rotateClockwise();
+                    rotateCounterClockwise();
                     break;
                 case SDLK_x:
-                    rotateCounterClockwise();
+                    rotateClockwise();
                     break;
                 case SDLK_ESCAPE:
                     flagQuit = true;
@@ -66,7 +66,6 @@ int main(int argc, char *argv[])
         loadMedia();
         refreshWindow();
     }
-    stopTimer();
     quit();
     return 0;
 }
