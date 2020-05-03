@@ -3,6 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-  printf("hello world!");
+  while(1)
+    printf("hello world!");
   return 0;
 }
