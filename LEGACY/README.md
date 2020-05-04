@@ -29,7 +29,7 @@ This part took so long because C++ doesn't have a lot of useful functions I am u
 ### SRS and Rotation Matrix
 SRS is also difficult to implement due to me not having much experiences in programming with matrices and rotation matrix was really difficult to understand especially when I have not done any non-basic maths in 2 years.
 
-Resultant matrix __counter-clockwise__ (unsure if SDL's negative Y-axis has a part in direction) rotation equations = 
+Resultant matrix __counter-clockwise__ (unsure if SDL's negative Y-axis has a part in direction) rotation equations =
 
 x' = -(y - yOrigin) + xOrigin
 
@@ -38,6 +38,8 @@ y' = x - xOrigin + yOrigin
 This part took me so long because I keep messing up the equation with "x' = -(y - xOrigin) + xOrigin" and implementing I-block SRS rotation took another 30mins.
 
 **8 hours**
+
+04052020 - I don't know what happened here but the code is a mess and compiling using gnu make doesn't work.
 
 # References
 https://tetris.wiki/
