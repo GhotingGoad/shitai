@@ -112,7 +112,7 @@ void refreshWindow(){
     //textureBackground.renderBackground(gameRenderer);
     textureBackground.renderBackground(gameRenderer);
     for(int i = 0; i < 10; i++){
-        for(int j = 0; j < 22; j++){
+        for(int j = 2; j < 22; j++){
             clip = mapTetris[i][j];
             if(clip<10) textureTetromino.renderSprite(i * 20 + 40, j * 20, &textureTetrominoClip[clip], gameRenderer);
             else textureTetromino.renderSprite(i * 20 + 40, j * 20, &textureTetrominoClip[clip-10], gameRenderer);

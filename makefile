@@ -3,10 +3,16 @@
 EXECPATH=./bin
 HEADPATH =./include
 OBJPATH=./obj
+TERMINAL=false
+
 COMMANDLINEOPTIONS=-I/usr/include/SDL2 -L/usr/lib -lSDL2main -lSDL2 -lSDL2_image
 
 shitai : main.o collision.o cTexture.o cTimer.o game.o tetromino.o
-	g++ $(OBJPATH)/main.o $(OBJPATH)/collision.o $(OBJPATH)/cTexture.o $(OBJPATH)/cTimer.o $(OBJPATH)/game.o $(OBJPATH)/tetromino.o -o $(EXECPATH)/shitai $(COMMANDLINEOPTIONS)
+ifeq ($(TERMINAL),true)
+	g++ $(OBJPATH)/main.o $(OBJPATH)/collision.o $(OBJPATH)/cTexture.o $(OBJPATH)/cTimer.o $(OBJPATH)/game.o $(OBJPATH)/tetromino.o -o $(EXECPATH)/shitai $(COMMANDLINEOPTIONS) -pie
+else
+	g++ $(OBJPATH)/main.o $(OBJPATH)/collision.o $(OBJPATH)/cTexture.o $(OBJPATH)/cTimer.o $(OBJPATH)/game.o $(OBJPATH)/tetromino.o -o $(EXECPATH)/shitai $(COMMANDLINEOPTIONS) -no-pie
+endif
 
 main.o : main.cpp $(HEADPATH)/global.h
 	g++ -c main.cpp -o $(OBJPATH)/main.o $(COMMANDLINEOPTIONS)

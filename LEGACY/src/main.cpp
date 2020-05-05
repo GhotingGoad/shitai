@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     //create an event handler
     SDL_Event event;
 
-    //startTimer();
+    startTimer();
 
     while(!flagQuit && !flagError)
     {
@@ -69,5 +69,3 @@ int main(int argc, char *argv[])
     quit();
     return 0;
 }
-
-

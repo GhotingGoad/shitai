@@ -2,4 +2,4 @@
 
 All the algorithms have been moved to modern code.
 
-LEGACY copy store for future references and documentation.
+LEGACY copy stored for future references and documentation.

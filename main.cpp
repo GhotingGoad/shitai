@@ -7,8 +7,8 @@ const int SCREEN_HEIGHT = 480;
 int playerPositionX = 240;
 int playerPositionY = 190;
 
-bool flagQuit = false;
 bool flagError = false;
+bool flagQuit = false;
 
 
 int main(int argc, char *argv[])
@@ -17,6 +17,8 @@ int main(int argc, char *argv[])
     initializeGame(SCREEN_WIDTH, SCREEN_HEIGHT);
     //create an event handler
     SDL_Event event;
+
+    startTimer();
 
     while(!flagQuit && !flagError)
     {
@@ -34,6 +36,7 @@ int main(int argc, char *argv[])
                 switch(event.key.keysym.sym)
                 {
                 case SDLK_UP:
+                    moveUp();
                     break;
                 case SDLK_DOWN:
                     moveDown();
@@ -45,10 +48,10 @@ int main(int argc, char *argv[])
                     moveRight();
                     break;
                 case SDLK_z:
-                    rotateClockwise();
+                    rotateCounterClockwise();
                     break;
                 case SDLK_x:
-                    rotateCounterClockwise();
+                    rotateClockwise();
                     break;
                 case SDLK_ESCAPE:
                     flagQuit = true;
@@ -62,8 +65,6 @@ int main(int argc, char *argv[])
         //display a texture onto the screen
         loadMedia();
         refreshWindow();
-        //120 FPS timer delay (change to event driven timer after this)
-        SDL_Delay(8.333333);
     }
     quit();
     return 0;
