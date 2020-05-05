@@ -1,5 +1,8 @@
 obj/
-bin/*
+bin/
+
 *.gch
 include/*gch
+
+!bin/dlls.txt
 !bin/media/

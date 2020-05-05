@@ -1,2 +1,0 @@
-Preq:
-SDL2.dll
