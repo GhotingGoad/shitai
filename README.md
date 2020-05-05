@@ -39,12 +39,24 @@ This part took me so long because I keep messing up the equation with "x' = -(y 
 
 **8 hours**
 
-04052020 - project has been resumed after 1 year hiatus from programming.
-Written in Atom and compiled using GNU Make on Ubuntu.
+Project has been resumed after 1 year hiatus from programming on the 4th of May, 2020.
+Learnt how to use GNU Make to compile so I am no longer reliant on IDE.
+Took 2 days due to difficult to understand documentation and migration to Atom on Ubuntu
+
+**2 days**
+
+I will spend the next few days studying and thinking how to rewrite the code.
+Everything needs to be drawn from a sprite sheet instead of importing a full background png.
+At this stage, I do not understand most of the code due to poor documentation, some offsets seem like rubbish to me.
+I block seems to be buggy doing rotation when it is sandwiched between another I block and a wall in a 3 blocks gap.
+
+
 
 # References
 https://tetris.wiki/
 
 http://lazyfoo.net/tutorials/SDL/
+
+http://nuclear.mutantstargoat.com/articles/make/
 
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet

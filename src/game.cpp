@@ -1,4 +1,5 @@
-#include "include/global.h"
+// ../ = previous folder
+#include "../global.h"
 
 
 SDL_Window* gameWindow = NULL;

@@ -1,4 +1,4 @@
-#include "include/global.h"
+#include "../global.h"
 
 
 //individual collision block for Player controlled Tetromino

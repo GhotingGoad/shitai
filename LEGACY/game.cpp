@@ -521,4 +521,3 @@ void quit()
     IMG_Quit();
     SDL_Quit();
 }
-
