@@ -1,8 +1,6 @@
-obj/
-bin/
+obj/*
+bin/*
 
-*.gch
-include/*gch
+.vscode
 
-!bin/dlls.txt
 !bin/media/
