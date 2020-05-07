@@ -6,7 +6,7 @@
 # ^ https://stackoverflow.com/questions/3024197/what-does-int-argc-char-argv-mean
 
 # -pie = terminal, -no-pie = no terminal
-CFLAGS = -no-pie
+CFLAGS = -pie
 # ./obj = RELATIVE PATH/obj folder
 OBJS=./obj/main.o ./obj/collision.o ./obj/cTexture.o ./obj/cTimer.o ./obj/game.o ./obj/tetromino.o
 # replace accordingly if you have development library directory elsewhere
