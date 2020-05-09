@@ -14,7 +14,7 @@ INCDIR = /usr/include/SDL2
 LIBDIR = /usr/lib
 
 shitai : main.o collision.o cTexture.o cTimer.o game.o tetromino.o
-	g++ $(OBJS) -o ./bin/shitai -I$(INCDIR) -L$(LIBDIR) -lSDL2main -lSDL2 -lSDL2_image $(CFLAGS)
+	g++ $(OBJS) -o ./bin/shitai -I/usr/include/SDL2 -L/usr/lib -lSDL2main -lSDL2 -lSDL2_image -no-pie
 
 main.o : main.cpp global.h
 	g++ -c main.cpp -o ./obj/main.o -I$(INCDIR) -L$(LIBDIR)
