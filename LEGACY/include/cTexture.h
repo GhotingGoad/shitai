@@ -1,7 +1,6 @@
 #ifndef CTEXTURE_H
 #define CTEXTURE_H
 
-
 class cTexture
 {
     public:
@@ -29,4 +28,4 @@ class cTexture
         int textureHeight;
 };
 
-#endif // WTEXTURE_H
+#endif // CTEXTURE_H

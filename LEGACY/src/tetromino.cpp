@@ -1,4 +1,4 @@
-#include "global.h"
+#include "../global.h"
 
 
 //individual collision block for Player controlled Tetromino
@@ -487,4 +487,3 @@ void rotateCounterClockwise(){
     mapTetris[tetrominoPosition[3][0]][tetrominoPosition[3][1]] = tetrominoType[0];
     refreshWindow();
 }
-

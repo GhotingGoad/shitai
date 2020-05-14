@@ -1,4 +1,4 @@
-#include "libraries.h"
+#include "../global.h"
 
 
 SDL_TimerID timerID;
@@ -19,6 +19,7 @@ void stopTimer(){
 Uint32 restartTimer(Uint32 interval, void* param){
     SDL_RemoveTimer(timerID);
     timerID = SDL_AddTimer((800/10)*10, moveDown, NULL);
+    return 0;
 }
 
 Uint32 moveDown(Uint32 interval, void* param){

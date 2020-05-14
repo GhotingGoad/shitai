@@ -1,4 +1,4 @@
-#include "global.h"
+#include "../global.h"
 
 
 //change the way collision works
@@ -63,6 +63,7 @@ bool checkClockwiseCollision(){
     switch(tetrominoType[0]){
         case 0:
             break;
+            /* I don't know why there's an additional collision check for I blocks, I think I should restart the project.
         case 1:
             if(mapTetris[-(tetrominoPosition[0][1] - tetrominoPosition[0][1]) + tetrominoPosition[0][0] + tetrominoRotationOffset[tetrominoRotationStep]]
             [(tetrominoPosition[0][0] - tetrominoPosition[0][0]) + tetrominoPosition[0][1] + tetrominoRotationOffset[tetrominoRotationStep + 1]] == -1
@@ -85,6 +86,7 @@ bool checkClockwiseCollision(){
             [(tetrominoPosition[3][0] - tetrominoPosition[0][0]) + tetrominoPosition[0][1] + tetrominoRotationOffset[tetrominoRotationStep + 1]] ==  tetrominoType[0]) collisionFlag4 = false;
             else collisionFlag4 = true;
             break;
+            */
         default:
             if(mapTetris[-(tetrominoPosition[0][1] - tetrominoPosition[0][1]) + tetrominoPosition[0][0]][(tetrominoPosition[0][0] - tetrominoPosition[0][0]) + tetrominoPosition[0][1]] == -1
             || mapTetris[-(tetrominoPosition[0][1] - tetrominoPosition[0][1]) + tetrominoPosition[0][0]][(tetrominoPosition[0][0] - tetrominoPosition[0][0]) + tetrominoPosition[0][1]] == tetrominoType[0]) collisionFlag1 = false;
@@ -146,5 +148,3 @@ bool checkCounterClockwiseCollision(){
     }
     return (collisionFlag1 || collisionFlag2 || collisionFlag3 || collisionFlag4);
 }
-
-

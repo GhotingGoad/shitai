@@ -1,6 +1,8 @@
-obj/*
-bin/*
-
 .vscode
 
+obj/*
+bin/*
 !bin/media/
+
+LEGACY/obj
+LEGACY/bin

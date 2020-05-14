@@ -11,7 +11,7 @@ ifeq ($(OS), windows)
 	CXX = x86_64-w64-mingw32-g++
 	LFLAGS = -lmingw32
 # -mwindows = no terminal
-	CXXFLAGS = ## -mwindows
+	CXXFLAGS = -mwindows
 # replace accordingly if you have development library directory elsewhere
 	INCDIR = /usr/x86_64-w64-mingw32/include/SDL2
 	LIBDIR = /usr/x86_64-w64-mingw32/lib

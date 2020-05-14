@@ -1,4 +1,4 @@
-#include "libraries.h"
+#include "../global.h"
 
 
 cTexture::cTexture(){

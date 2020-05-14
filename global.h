@@ -1,5 +1,5 @@
-#ifndef LIBRARIES_H
-#define LIBRARIES_H
+#ifndef GLOBAL_H
+#define GLOBAL_H
 
 #include <stdio.h>
 #include <string>
@@ -14,6 +14,8 @@
 #include "include/cTimer.h"
 #include "include/collision.h"
 #include "include/tetromino.h"
+
+extern SDL_Event event;
 
 extern bool flagError;
 extern bool flagQuit;
@@ -30,4 +32,4 @@ extern bool collisionFlag2;
 extern bool collisionFlag3;
 extern bool collisionFlag4;
 
-#endif // TETROMINO_H
+#endif

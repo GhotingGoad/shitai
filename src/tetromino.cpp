@@ -278,7 +278,6 @@ bool moveLeft(){
         tetrominoPosition[1][0] -= 1;
         tetrominoPosition[2][0] -= 1;
         tetrominoPosition[3][0] -= 1;
-        refreshWindow();
         return true;
     }
 }
@@ -300,7 +299,7 @@ bool moveRight(){
         tetrominoPosition[1][0] += 1;
         tetrominoPosition[2][0] += 1;
         tetrominoPosition[3][0] += 1;
-        refreshWindow();
+        
         return true;
     }
 }
@@ -397,7 +396,7 @@ void rotateClockwise(){
     mapTetris[tetrominoPosition[1][0]][tetrominoPosition[1][1]] = tetrominoType[0];
     mapTetris[tetrominoPosition[2][0]][tetrominoPosition[2][1]] = tetrominoType[0];
     mapTetris[tetrominoPosition[3][0]][tetrominoPosition[3][1]] = tetrominoType[0];
-    refreshWindow();
+    
 }
 
 void rotateCounterClockwise(){
@@ -485,5 +484,5 @@ void rotateCounterClockwise(){
     mapTetris[tetrominoPosition[1][0]][tetrominoPosition[1][1]] = tetrominoType[0];
     mapTetris[tetrominoPosition[2][0]][tetrominoPosition[2][1]] = tetrominoType[0];
     mapTetris[tetrominoPosition[3][0]][tetrominoPosition[3][1]] = tetrominoType[0];
-    refreshWindow();
+    
 }

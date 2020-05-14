@@ -10,21 +10,26 @@ int playerPositionY = 190;
 bool flagError = false;
 bool flagQuit = false;
 
+SDL_Event event;
 
 int main(int argc, char *argv[])
 {
     //initialize SDL interface and create basic window.
     initializeGame(SCREEN_WIDTH, SCREEN_HEIGHT);
     //create an event handler
-    SDL_Event event;
 
     startTimer();
+    refreshTimer();
 
     while(!flagQuit && !flagError)
     {
         //event queue **requires more research and study
         while(SDL_PollEvent(&event) != 0)
         {
+            if(event.type == SDL_USEREVENT){
+                printf("USER");
+                refreshWindow();
+            }
             //User requests quit
             if(event.type == SDL_QUIT)
             {
@@ -64,7 +69,8 @@ int main(int argc, char *argv[])
         }
         //display a texture onto the screen
         loadMedia();
-        refreshWindow();
+        //delay affects timer, it's not exactly an interrupt.
+        //SDL_Delay(1000);
     }
     quit();
     return 0;

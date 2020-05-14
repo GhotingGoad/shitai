@@ -7,13 +7,13 @@
 #include <time.h>
 
 #include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL_image.h>
 
-#include "game.h"
-#include "cTexture.h"
-#include "cTimer.h"
-#include "collision.h"
-#include "tetromino.h"
+#include "include/game.h"
+#include "include/cTexture.h"
+#include "include/cTimer.h"
+#include "include/collision.h"
+#include "include/tetromino.h"
 
 extern bool flagError;
 extern bool flagQuit;
